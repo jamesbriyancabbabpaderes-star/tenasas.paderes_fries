@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gsauce Burger & Fries</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #d9534f;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .menu-container {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            align-items: center;
+        }
+        .menu-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 85%;
+            max-width: 340px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            border: 1px solid #eee;
+        }
+        .icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+        .item-name {
+            font-size: 24px;
+            font-weight: bold;
+            color: #222;
+        }
+        .label {
+            font-size: 14px;
+            color: #777;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            text-align: left;
+            display: block;
+            font-weight: bold;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            margin-bottom: 15px;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            background-color: #ffc107;
+            color: #333;
+            border: none;
+            padding: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        button:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+<body>
+
+    <h1><img src="Burger.png" style="width:330px;height:auto;"></h1>
+    <p class="subtitle">Order Now!</p>
+
+    <div class="menu-container">
+
+        <!-- BURGER -->
+        <div class="menu-item">
+            <div class="icon">🍔</div>
+            <div class="item-name">Gsauce Burger</div>
+
+            <label class="label" for="burgerSize">Choose your burger:</label>
+            <select id="burgerSize">
+                <option value="Solo Size — ₱59.00">Solo Size — ₱59.00</option>
+                <option value="Solo Size With Cheese — ₱69.00">Solo Size With Cheese — ₱69.00</option>
+                <option value="Double Gsauce — ₱89.00">Double Gsauce — ₱89.00</option>
+                <option value="Double Gsauce With Cheese — ₱99.00">Double Gsauce With Cheese — ₱99.00</option>
+                <option value="Boss Size — ₱129.00">Boss Size (Triple Patty) — ₱129.00</option>
+                <option value="Boss Size With Cheese — ₱139.00">Boss Size (Triple Patty) With Cheese — ₱139.00</option>
+            </select>
+
+            <button type="button" onclick="orderBurger()">Order Burger</button>
+        </div>
+
+       
+        <div class="menu-item">
+            <div class="icon">🍟</div>
+            <div class="item-name">Gsauce Fries</div>
+
+            <label class="label" for="friesFlavor">Choose Flavor:</label>
+            <select id="friesFlavor">
+                <option value="Cheese">Cheese 🧀</option>
+                <option value="Barbecue">Barbecue 🔥</option>
+                <option value="Sour Cream">Sour Cream 🧅</option>
+                <option value="Plain Salted">Plain Salted 🧂</option>
+            </select>
+
+            <label class="label" for="friesSize">Choose your fries:</label>
+            <select id="friesSize">
+                <option value="Regular — ₱39.00">Regular — ₱39.00</option>
+                <option value="Large — ₱59.00">Large — ₱59.00</option>
+                <option value="Tera Size — ₱99.00">Tera Size — ₱99.00</option>
+            </select>
+
+            <button type="button" onclick="orderFries()">Order Fries</button>
+        </div>
+
+    </div>
+
+    <script>
+        function orderBurger() {
+            var selectedBurger = document.getElementById("burgerSize").value;
+            alert("Salamat sa pag-order!\nInihahanda na ang iyong: Gsauce Burger (" + selectedBurger + ")");
+        }
+
+        function orderFries() {
+            var selectedFlavor = document.getElementById("friesFlavor").value;
+            var selectedSize = document.getElementById("friesSize").value;
+            alert("Salamat sa pag-order!\nInihahanda na ang iyong: " + selectedFlavor + " Gsauce Fries (" + selectedSize + ")");
+        }
+    </script>
+
+</body>
+</html>
+
+
